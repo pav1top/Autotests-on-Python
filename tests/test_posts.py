@@ -1,9 +1,8 @@
 import requests
-import pytest
 
-def test_get_response():
-    response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
+def test_get_post_by_id_returns_200(base_url):
+    response = requests.get(f"{base_url}/posts/1")
 
-    body = response.json()
     assert response.status_code == 200
+    body = response.json()
     assert body["id"] == 1
