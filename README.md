@@ -4,4 +4,6 @@ It's my api autotests on pytest + requests libraries for jsonplaceholder
 
 ## How to run
 Before start these tests you need to install libraries from requirements.txt
-Use these command : pip install -r requirements.txt
+
+
+Use these command : ```pip install -r requirements.txt```
