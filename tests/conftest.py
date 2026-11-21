@@ -6,7 +6,7 @@ def base_url():
     return "https://jsonplaceholder.typicode.com"
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def api():
     session = requests.Session()
     session.headers.update({"Accept" : "application/json"})
