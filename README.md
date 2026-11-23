@@ -1,9 +1,18 @@
 # Autotests on Python
 
-It's my api autotests on pytest + requests libraries for jsonplaceholder
+API autotests for jsonplaceholder on pytest + requests.
 
 ## How to run
-Before start these tests you need to install libraries from requirements.txt
 
+```
+pip install -r requirements.txt
+pytest
+```
 
-Use these command : ```pip install -r requirements.txt```
+More options:
+
+```
+pytest -v                 # подробный вывод
+pytest -m negative        # только негативные тесты
+pytest -m positive        # только позитивные тесты
+```
