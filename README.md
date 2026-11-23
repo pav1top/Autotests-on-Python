@@ -1,3 +1,5 @@
+[![API tests](https://github.com/pav1top/Autotests-on-Python/actions/workflows/tests.yml/badge.svg)](https://github.com/pav1top/Autotests-on-Python/actions/workflows/tests.yml)
+
 # Autotests on Python
 
 API autotests for jsonplaceholder on pytest + requests.
