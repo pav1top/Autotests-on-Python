@@ -1,12 +1,26 @@
 import pytest
 
 
-def test_get_post_by_id_returns_200(api, base_url):
-    response = api.get(f"{base_url}/posts/1", timeout=10)
+@pytest.mark.positive
+def test_get_post_list_returns_100_items(api, base_url):
+    response = api.get(f"{base_url}/posts", timeout=10)
 
     assert response.status_code == 200
+
     body = response.json()
-    assert body["id"] == 1
+    assert isinstance(body, list)
+    assert len(body) == 100
+
+
+@pytest.mark.negative
+@pytest.mark.parametrize("post_id", [-1, 0, 101, "abc"])
+def test_get_post_with_invalid_id_returns_404(api, base_url, post_id):
+    response = api.get(f"{base_url}/posts/{post_id}", timeout=10)
+
+    assert response.status_code == 404
+
+    body = response.json()
+    assert body == {}
 
 
 @pytest.mark.parametrize("post_id", [1, 2, 3])
